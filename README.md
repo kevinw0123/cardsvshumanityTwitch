@@ -1,15 +1,5 @@
 # Twitch Chatbot Hackathon
-Welcome to the chatbot hackathon! We’re looking for a bot that anyone can use to make chat more fun. We’ve seen games, we’ve seen song 
-requests, we’ve seen loyalty points, but we haven’t seen anything that *creates* content. What about a bot that scrapes the web for fun 
-facts about the game a broadcaster is playing? Or finds and links to a relevant GIF that captures a moment? Maybe a bot that takes the 
-pulse of Twitch and finds the most popular meme of the last 10 minutes? What kind of content would make chat more fun, and how could a 
-bot find it and surface it?
-
-You'll find some links below to help you on your journey to creating an awesome chatbot for Twitch. You will also find the code to a 
-simple JavaScript chatbot that can help demonstrate how to interact with chat on Twitch. This particular bot uses JavaScript, but you 
-can use any language you would like. The project structure section will give you a quick overview of this code.
-
-Good luck and have fun!
+We are using the Twitch chatbot template to create a cards against humanity chatbot
 
 ## Important links
 * Getting started documentation for the Twitch platform: https://dev.twitch.tv/docs 
