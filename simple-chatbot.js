@@ -76,8 +76,15 @@ chatClient.prototype.calculateScore = function calculateScore() {
                 this.gameObject.highscore[key] = 0;
             }
         }
+    
         console.log(key + " " + this.gameObject.highscore[key]);
     }
+  
+  for (var i=1; i<=6;i++) {
+    if (!this.gameObject.roundObject.voteOrder.includes(i)) {
+      $('#whitecard'+i).fadeTo(500).text("");
+    }
+  }
 }
 
 chatClient.prototype.resetOrder = function resetOrder() {
@@ -103,7 +110,7 @@ chatClient.prototype.setOrder = function setOrder(voteOrder) {
       $('.submit').fadeIn(500);
     }
     $('.reset').fadeIn(500);
-    $('.chosenorder').text("Card\(s\) chosen:\n" +this.gameObject.roundObject.voteOrder);
+    $('.chosenorder').text("Card chosen:\n" +this.gameObject.roundObject.voteOrder);
     console.log("curr order = " + this.gameObject.roundObject.voteOrder);
 }
 
