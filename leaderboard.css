@@ -1,25 +1,39 @@
 body {
     font-family: sans-serif;
+    background-color: #b561f9;
 }
+
+#logo{
+    width: 200px;
+    margin-left: 435px;
+    border-radius: 10px;
+}
+
 .btn {
     background-color: #699DB6;
     border-color: rgba(0,0,0,0.3);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+    margin-bottom: 10px;
     text-shadow: 0 1px 0 rgba(0,0,0,0.5);
     color: #FFF;
     padding: 10px;
     margin-top: 5px;
     letter-spacing: 2px;
-    font-size: 14px;
+    font-size: 18px;
+    width: 250px;
+    font-family: 'Kranky', cursive;
 }
 .disconnect {
     background-color: #f00;
 }
 .display {
     background-color: #002b80;
+    margin-bottom: 120px;
 }
 .header {
     padding: 10px 15px 10px 15px;
-    background-color: rgb(238, 255, 249);
+    background-color: rgb(238, 255, 241);
     color: rgb(92, 180, 143);
     text-align: center;
     border-bottom: 1px solid rgb(225, 236, 233);
@@ -29,8 +43,38 @@ body {
     width: 256px;
     margin: 0 auto;
     float: right;
+    margin-top: 20px;
+    margin-right: 50px;
     display: inline-block;
+    font-size: 18px;
+    font-family: 'Kranky', cursive;
 }
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-size: 18px;
+    font-family: 'Kranky', cursive;
+    box-sizing: border-box;
+}
+
+input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 18px;
+    font-family: 'Kranky', cursive;
+    box-sizing: border-box;
+}
+
 .button-list {
     float: left;
 }
@@ -38,6 +82,7 @@ body {
     padding: 10px 0 10px 20px;
     position: relative;
     border-bottom: 1px solid rgb(225, 236, 233);
+    background-color: white;
 }
 .rank {
     position: absolute;
