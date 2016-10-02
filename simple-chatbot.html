@@ -20,6 +20,22 @@
         <button class="connect btn">Connect to chat</button>
         <button class="disconnect btn">Disconnect from chat</button>
         <button class="display btn">Populate leaderboard</button>
+        <button class="start btn">Start Round</button>
+    </div>
+
+    <div class="cards-console">
+        <h1 class="blackcard" id="blackcard"></h1>
+        <ol class="whitecards">
+            <button><li class="whitecard" id="white-1" value ="1"></li></button>
+            <button><li class="whitecard" id="white-2" value ="2"></li></button>
+            <button><li class="whitecard" id="white-3" value ="3"></li></button>
+            <button><li class="whitecard" id="white-4" value ="4"></li></button>
+            <button><li class="whitecard" id="white-5" value ="5"></li></button>
+            <button><li class="whitecard" id="white-6" value ="6"></li></button>
+        </ol>
+        <h3 class="chosenorder">Order: </h3>
+        <button class="reset">Reset</button>
+        <button class="submit">Submit</button>
     </div>
 
     <div id="leaderboard">
@@ -27,18 +43,43 @@
         <div class="leaderboard-output"></div>
     </div>
 
+
+
     <script src="simple-chatbot.js"></script>
     <script>
     $(document).ready(function(){
         $('.connect').click(function(){
+            window.chatClient.newGame();
             window.chatClient.open();
+            //toggle disconnect/connect
+            $(this).hide();
+            $('.disconnect').show();
+            $('.cards-console').show();
         });
+        $('.disconnect').hide();
+        $('.cards-console').hide();
         $('.disconnect').click(function(){
             window.chatClient.close();
+            //toggle disconnect/connect
+            $(this).hide();
+            $('.connect').show();
+            $('.cards-console').hide();
         });
         $('.display').click(function(){
-            buildLeaderboard();
+            window.chatClient.buildLeaderboard();
         });
+        $('.start').click(function(){
+            window.chatClient.startRound();
+        });
+        $('.whitecard').click(function(){
+            window.chatClient.setOrder($(this).attr("value"));
+        })
+        $('.reset').click(function(){
+            window.chatClient.resetOrder(); 
+        })
+        $('.submit').click(function(){
+            window.chatClient.calculateScore();
+        })
     });
 
     window.chatClient = new chatClient({
@@ -46,6 +87,7 @@
         username: 'cahbot',
         password: 'oauth:pikofp1p3ygkmn6uakh4qcpp07jxeh',
     });
+
     </script>
 </body>
 </html>
