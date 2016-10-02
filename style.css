@@ -1,0 +1,99 @@
+body {
+  background-color: #6441A5;
+}
+.navbar {
+  margin-top:22px;
+  padding:8px;
+  padding-bottom:12px;
+  background-color: #fff;
+  border-radius: 0px;
+}
+.navbar-brand {
+  margin-top: 0px;
+  padding-top: 0px;  
+}
+.logo {
+  border-radius:12px;
+}
+.connectbar { 
+  margin-top:1px;
+  margin-right:1px;
+}
+#connect, #connectmodal, #connecting,
+#disconnect {
+  border-radius: 0px;
+}
+
+.modal-content {
+  border-radius:0px;
+}
+.modal-close {
+  border-radius:0px;
+}
+
+#maincontainer {
+  padding:0px;
+}
+#cardcontainer {
+  background-color: #fff;
+  border-radius: 0px;
+  margin-left:15px;
+  margin-right:30px;
+  padding-top: 15px;  
+  padding-right:15px;
+}
+.jumbotron {
+  background-color: #000;
+  color: #fff;
+  width: 140px;
+  height: 200px;
+  float:left; 
+  margin-right: 20px;
+  overflow: scroll; 
+}
+#blackcardbackground {
+  padding:10px;
+}
+#wc {
+  padding:15px;
+}
+.whitecard {
+  background-color:#fff;
+  border: 1px black solid;
+  width: 140px;
+  height: 200px;
+  border-radius: 5px;
+  padding:15px;
+  margin-right:20px;
+  float:left;
+}
+.whitecard:hover {
+  background-color: #D3D3D3;
+  cursor: pointer;
+  transition: background-color .5s;
+}
+.whitecardtext {
+  color: #000;
+}
+.whitecardchosen {
+  background-color: #D3D3D3;
+  transition: background-color .5s;
+}
+.blankcard {
+  background-color: #fff;
+}
+
+.blackcardenabled {
+  background-color: #000;
+}
+.blackcardenabled:hover {
+  background-color: #808080;
+  transition: background-color .5s;
+  cursor:pointer;
+}
+
+.blackcard, .starttext {
+  margin-left:10px; 
+}
+.start {
+}

@@ -1,93 +1,201 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-    <title>Leaderboards</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <link rel="stylesheet" href="leaderboard.css">
-</head>
-<body>
-    <script id="entry-template" type="text/x-custom-template">
-        <div class="entry">
-            <span class="rank"></span>
-            <div class="user-info">
-                <span class="user-name"></span>
-                <span class="user-points"></span> points
+  <head>
+    <title>Twitch Plays - Cards Against Humanity</title>
+    <link rel="icon" href="twitchfavicon.png" type="image/x-icon"/>
+    <!--  Bootstrap CDN  -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  </head>
+  
+  
+  <body>
+    <div class="container">
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header" >
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+              <img alt="logo" class="logo" src="twitch.png" width="140px">
+            </a>
+          </div>
+          <div class="connectbar nav navbar-right">
+            <div class="connect btn-group btn-group-lg" role="group" >
+              <button type="button" id="connect" class="btn btn-success">Connect</button>
+              <button type="button" id="connectmodal" class="btn btn-success" data-toggle="modal" data-target="#loginModal">Login <span class="caret"></span></button>
             </div>
+            <button type="button" id="connecting" disabled class="connecting btn btn-lg btn-secondary">Connecting</button>
+            <button type="button" id="disconnect" class="disconnect btn btn-lg btn-danger">Disconnect</button>
+          </div>
+        </div><!--/.container-fluid -->
+      </nav>
+    </div>
+      
+    <div class="container" id="maincontainer">
+      <div class="container" id="cardcontainer">
+        <div class="jumbotron start" id="blackcardbackground">
+          <div class="blackcardcontainer">
+            <h4 class="blackcard">Cards Against Humanity.</h4>
+            <h6 class="starttext"><br>Click to Start</h6>
+          </div>
         </div>
-    </script>
+        <div class="whitecard" value="1">
+          <h4 class="whitecardtext" id="whitecard1"></h4>
+          <h6 class="whitecardtext" id="chosenorder1"><br><br><br></h6>
+        </div>
+        <div class="whitecard" value="2">
+          <h4 class="whitecardtext" id="whitecard2"></h4>
+          <h6 class="whitecardtext" id="chosenorder2"><br><br><br></h6>
+        </div>
+        <div class="whitecard" value="3">
+          <h4 class="whitecardtext" id="whitecard3"></h4>
+          <h6 class="whitecardtext" id="chosenorder3"><br><br><br></h6>
+        </div>
+      </div>
+      <div class="container" id="cardcontainer">
+        <div class="jumbotron blankcard" style="padding:15px;">
+          <h4 class="chosenorder" style="color:#000; padding:0px;"></h4>
+          <button class="submit btn btn-large btn-success">Submit</button>
+          <br>
+          <button class="reset btn btn-large btn-default">Reset Cards </button>
+        </div>
+        <div class="whitecard" value="4">
+        
+          <h4 class="whitecardtext" id="whitecard4"></h4>
+          <h6 class="whitecardtext" id="chosenorder4"><br><br><br></h6>
+        </div>
+        <div class="whitecard" value="5">
+        
+          <h4 class="whitecardtext" id="whitecard5"></h4>
+          <h6 class="whitecardtext" id="chosenorder5"><br><br><br></h6>
+        </div>
+        <div class="whitecard" value="6">
+        
+          <h4 class="whitecardtext" id="whitecard6"></h4>
+          <h6 class="whitecardtext" id="chosenorder6"><br><br><br></h6>
+        </div>
+        
+        
+        
+        
+      </div>
+      
+    </div>
     
-    <div class="button-list">
-        <button class="connect btn">Connect to chat</button>
-        <button class="disconnect btn">Disconnect from chat</button>
-        <button class="display btn">Populate leaderboard</button>
-        <button class="start btn">Start Round</button>
+    
+    
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Login Info</h4>
+          </div>
+          <div class="modal-body" width="100%">
+            <div class="form-group">
+              <br>
+              <label for="username">Username</label>
+              <input id="username" type="text" class="form-control" value="cahbot" placeholder="Username">
+            </div>
+            <div class="form-group">
+              <label for="password">OAuth</label>
+              <input id="password" type="password" class="form-control" value="oauth:pikofp1p3ygkmn6uakh4qcpp07jxeh" placeholder="oauth:password">
+            </div>   
+            <div class="form-group">
+              <label for="channel">Channel</label>
+              <input id="channel" type="text" class="form-control" value="#cahbot" placeholder="#channel">
+            </div>   
+        </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" data-dismiss="modal" class="modal-close btn btn-default">Save and Close</button>
+          </div>
+        </div>
+      </div>
     </div>
+  </body>
+  <!--  JQuery CDN  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Bootstrap CDN -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <div class="cards-console">
-        <h1 class="blackcard" id="blackcard"></h1>
-        <ol class="whitecards">
-            <button><li class="whitecard" id="white-1" value ="1"></li></button>
-            <button><li class="whitecard" id="white-2" value ="2"></li></button>
-            <button><li class="whitecard" id="white-3" value ="3"></li></button>
-            <button><li class="whitecard" id="white-4" value ="4"></li></button>
-            <button><li class="whitecard" id="white-5" value ="5"></li></button>
-            <button><li class="whitecard" id="white-6" value ="6"></li></button>
-        </ol>
-        <h3 class="chosenorder">Order: </h3>
-        <button class="reset">Reset</button>
-        <button class="submit">Submit</button>
-    </div>
-
-    <div id="leaderboard">
-        <div class="header">Leaderboard</div>
-        <div class="leaderboard-output"></div>
-    </div>
-
-
-
-    <script src="simple-chatbot.js"></script>
-    <script>
+  <script src="simple-chatbot.js"></script>  
+  <script>
     $(document).ready(function(){
-        $('.connect').click(function(){
-            window.chatClient.newGame();
-            window.chatClient.open();
-            //toggle disconnect/connect
-            $(this).hide();
+      $('.disconnect').hide();
+      $('.connecting').hide();
+      $('.cards-console').hide();
+      $('.starttext').hide();
+      $('.whitecard').hide();
+      $('.submit').hide();
+      $('.reset').hide();
+      
+      $('.connect').click(function(){
+        if (!($("#username").val() == "" || $("#password").val() == "" || $("#channel").val() == "")){
+          $('.connect').hide();
+          $('.connecting').show();
+          
+          window.chatClient.newGame();
+          window.chatClient.username = $("#username").val().trim();
+          window.chatClient.password = $("#password").val().trim();
+          window.chatClient.channel = $("#channel").val().trim();
+          
+          if (window.chatClient.open()) {
+            $('.starttext').text("Click to Start");
+            $('.starttext').fadeIn(500);
+            $('#blackcardbackground').addClass('blackcardenabled'); 
+            $('.connecting').hide();
             $('.disconnect').show();
-            $('.cards-console').show();
-        });
-        $('.disconnect').hide();
-        $('.cards-console').hide();
-        $('.disconnect').click(function(){
-            window.chatClient.close();
+            $('.whitecard').fadeIn(500);
+          }
+        }
+      });
+      $('.disconnect').click(function(){
+          //toggle disconnect/connect
+        window.chatClient.close();
             //toggle disconnect/connect
-            $(this).hide();
-            $('.connect').show();
-            $('.cards-console').hide();
-        });
-        $('.display').click(function(){
-            window.chatClient.buildLeaderboard();
-        });
-        $('.start').click(function(){
-            window.chatClient.startRound();
-        });
-        $('.whitecard').click(function(){
-            window.chatClient.setOrder($(this).attr("value"));
-        })
-        $('.reset').click(function(){
-            window.chatClient.resetOrder(); 
-        })
-        $('.submit').click(function(){
-            window.chatClient.calculateScore();
-        })
+        $(this).hide();
+        $('.connect').show();
+        $('#blackcardbackground').removeClass('blackcardenabled'); 
+        $('.blackcard').text("Cards Against Humanity.");
+        $('.starttext').fadeOut(500);
+        $('.whitecard').fadeOut(500);
+      });
+      $('.start').click(function(){
+        if ($('.start').hasClass("blackcardenabled")) {
+          $('.start').removeClass("blackcardenabled");
+          window.chatClient.startRound();
+          $('.starttext').fadeOut(500); 
+        }
+      });
+      $('.whitecard').click(function() {
+        window.chatClient.setOrder($(this).attr("value"));
+      });
+        
+      $('.reset').click(function(){
+        window.chatClient.resetOrder(); 
+        $('#blackcardbackground').removeClass('blackcardenabled'); 
+      });
+      $('.submit').click(function() {
+        window.chatClient.calculateScore();
+        $('.start').addClass("blackcardenabled");
+        $('.starttext').text("Click for next round").fadeIn(500);
+        $('.submit').hide();
+        $('.reset').hide();
+      });
     });
-
     window.chatClient = new chatClient({
         channel: '#cahbot',
         username: 'cahbot',
         password: 'oauth:pikofp1p3ygkmn6uakh4qcpp07jxeh',
     });
-
-    </script>
-</body>
+  
+  </script>
 </html>
