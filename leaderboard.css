@@ -3,7 +3,6 @@ body {
     background-color: #b561f9;
 }
 
-
 .btn {
     background-color: #699DB6;
     border-color: rgba(0,0,0,0.3);
@@ -17,7 +16,6 @@ body {
     letter-spacing: 2px;
     font-size: 18px;
     width: 250px;
-    font-family: 'Kranky', cursive;
 }
 .disconnect {
     background-color: #f00;
@@ -37,12 +35,10 @@ body {
     border: 1px solid rgb(9, 179, 117);
     width: 256px;
     margin: 0 auto;
-    float: right;
     margin-top: 20px;
     margin-right: 50px;
     display: inline-block;
     font-size: 18px;
-    font-family: 'Kranky', cursive;
 }
 
 input[type=text], select {
@@ -69,6 +65,7 @@ input[type=password], select {
     font-family: 'Kranky', cursive;
     box-sizing: border-box;
 }
+/*
 
 .button-list {
     float: left;
@@ -102,4 +99,4 @@ input[type=password], select {
 }
 button {
     display: block;
-}
+}*/

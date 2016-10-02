@@ -1,73 +1,95 @@
 body {
   background-color: #6441A5;
+  height: 100%;
 }
 .navbar {
-  margin-top:22px;
-  padding:8px;
-  padding-bottom:12px;
+  margin-top: 22px;
+  padding-top: 8px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 12px;
   background-color: #fff;
   border-radius: 0px;
 }
 .navbar-brand {
   margin-top: 0px;
-  padding-top: 0px;  
+  padding-top: 0px;
 }
 .logo {
-  border-radius:12px;
+  border-radius: 12px;
 }
-.connectbar { 
-  margin-top:1px;
-  margin-right:1px;
+.connectbar {
+  margin-top: 1px;
+  margin-right: 1px;
 }
-#connect, #connectmodal, #connecting,
+#connect,
+#connectmodal,
+#connecting,
 #disconnect {
   border-radius: 0px;
 }
-
 .modal-content {
-  border-radius:0px;
+  border-radius: 0px;
 }
 .modal-close {
-  border-radius:0px;
+  border-radius: 0px;
 }
-
 #maincontainer {
-  padding:0px;
+  background-color: #fff;
+}
+#maincardcontainer {
+  padding: 0px;
+  float: left;
+  
+/*  border-right:  24px   solid  #6441A5;*/
 }
 #cardcontainer {
-  background-color: #fff;
   border-radius: 0px;
-  margin-left:15px;
-  margin-right:30px;
-  padding-top: 15px;  
-  padding-right:15px;
+  margin-left: 15px;
+  margin-right: 30px;
+  padding-top: 35px;
+  padding-right: 15px;
+}
+#leaderboardcontianer {
+  float: right;
+}
+#leaderboard {
+  display: inline-block;
+  padding-top: 10px;
+  height:300px;
+}
+.leaderboard-output {
+  color: #000;
 }
 .jumbotron {
   background-color: #000;
   color: #fff;
   width: 140px;
   height: 200px;
-  float:left; 
+  float: left;
   margin-right: 20px;
-  overflow: scroll; 
+  overflow: scroll;
 }
 #blackcardbackground {
-  padding:10px;
+  padding: 10px;
 }
 #wc {
-  padding:15px;
+  padding: 15px;
 }
 .whitecard {
-  background-color:#fff;
+  background-color: #fff;
   border: 1px black solid;
   width: 140px;
   height: 200px;
   border-radius: 5px;
-  padding:15px;
-  margin-right:20px;
-  float:left;
+  padding: 15px;
+  margin-right: 20px;
+  float: left;
 }
-.whitecard:hover {
+.whitecardclickable {
+  background-color: #fff;
+}
+.whitecardclickable:hover {
   background-color: #D3D3D3;
   cursor: pointer;
   transition: background-color .5s;
@@ -82,18 +104,71 @@ body {
 .blankcard {
   background-color: #fff;
 }
-
 .blackcardenabled {
   background-color: #000;
 }
 .blackcardenabled:hover {
   background-color: #808080;
   transition: background-color .5s;
-  cursor:pointer;
+  cursor: pointer;
+}
+.blackcard,
+.starttext {
+  margin-left: 10px;
 }
 
-.blackcard, .starttext {
-  margin-left:10px; 
+
+.submit {
+  margin-bottom: 5px;
+  width: 100%;
 }
-.start {
+.reset {
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.button-list {
+  float: left;
+}
+.entry {
+  padding: 10px 0 10px 20px;
+  position: relative;
+  border-bottom: 1px solid rgb(225, 236, 233);
+  background-color: white;
+}
+.rank {
+  position: absolute;
+  left: -12px;
+  top: 35%;
+  width: 16px;
+  height: 16px;
+  padding: 4px;
+  border-radius: 50%;
+  background-color: rgb(12, 178, 117);
+  text-align: center;
+  font-size: 14px;
+  color: #FFF;
+  font-weight: bold;
+}
+.user-name {
+  margin-bottom: 5px;
+  display: inline;
+}
+
+.row.vertical-divider {
+  overflow: ;
+}
+.col-md-9 {
+  border-right: 22px solid #6441A5;
+}
+.console {
+  overflow: scroll;
+  margin-left: 30px;  
+}
+
+.leaderheader {
+  font-family: 'Fredericka the Great', cursive;
+}
+.consoleheader {
+  font-family: 'Fredericka the Great', cursive;
 }

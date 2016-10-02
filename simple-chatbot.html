@@ -6,12 +6,29 @@
     <!--  Bootstrap CDN  -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
+    <!--  Fonts  -->
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kranky" rel="stylesheet">
+<!--    <link href="leaderboard.css" rel="stylesheet">-->
+    <style>
+      @font-face {
+        font-family: 'DIMITRI'; src:url("DIMIS___.ttf");
+      }
+    </style>
   </head>
   
   
   <body>
-    <div class="container">
-
+    <script id="entry-template" type="text">
+      
+      <li>
+          <b><span class="user-name"></span></b><br>
+          <span class="user-points"></span>
+      </li>
+        
+    </script>
+    <div class="container" id="navbar">
+      <div class="row">
       <!-- Static navbar -->
       <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -27,8 +44,8 @@
             </a>
           </div>
           <div class="connectbar nav navbar-right">
-            <div class="connect btn-group btn-group-lg" role="group" >
-              <button type="button" id="connect" class="btn btn-success">Connect</button>
+            <div class="connectgroup btn-group btn-group-lg" role="group" >
+              <button type="button" id="connect" class="connect btn btn-success">Connect</button>
               <button type="button" id="connectmodal" class="btn btn-success" data-toggle="modal" data-target="#loginModal">Login <span class="caret"></span></button>
             </div>
             <button type="button" id="connecting" disabled class="connecting btn btn-lg btn-secondary">Connecting</button>
@@ -36,59 +53,83 @@
           </div>
         </div><!--/.container-fluid -->
       </nav>
-    </div>
-      
-    <div class="container" id="maincontainer">
-      <div class="container" id="cardcontainer">
-        <div class="jumbotron start" id="blackcardbackground">
-          <div class="blackcardcontainer">
-            <h4 class="blackcard">Cards Against Humanity.</h4>
-            <h6 class="starttext"><br>Click to Start</h6>
-          </div>
-        </div>
-        <div class="whitecard" value="1">
-          <h4 class="whitecardtext" id="whitecard1"></h4>
-          <h6 class="whitecardtext" id="chosenorder1"><br><br><br></h6>
-        </div>
-        <div class="whitecard" value="2">
-          <h4 class="whitecardtext" id="whitecard2"></h4>
-          <h6 class="whitecardtext" id="chosenorder2"><br><br><br></h6>
-        </div>
-        <div class="whitecard" value="3">
-          <h4 class="whitecardtext" id="whitecard3"></h4>
-          <h6 class="whitecardtext" id="chosenorder3"><br><br><br></h6>
-        </div>
       </div>
-      <div class="container" id="cardcontainer">
-        <div class="jumbotron blankcard" style="padding:15px;">
-          <h4 class="chosenorder" style="color:#000; padding:0px;"></h4>
-          <button class="submit btn btn-large btn-success">Submit</button>
-          <br>
-          <button class="reset btn btn-large btn-default">Reset Cards </button>
-        </div>
-        <div class="whitecard" value="4">
-        
-          <h4 class="whitecardtext" id="whitecard4"></h4>
-          <h6 class="whitecardtext" id="chosenorder4"><br><br><br></h6>
-        </div>
-        <div class="whitecard" value="5">
-        
-          <h4 class="whitecardtext" id="whitecard5"></h4>
-          <h6 class="whitecardtext" id="chosenorder5"><br><br><br></h6>
-        </div>
-        <div class="whitecard" value="6">
-        
-          <h4 class="whitecardtext" id="whitecard6"></h4>
-          <h6 class="whitecardtext" id="chosenorder6"><br><br><br></h6>
-        </div>
-        
-        
-        
-        
-      </div>
-      
     </div>
     
+    <div class="container" id="maincontainer">
+      <div class="row vertical-divider">
+        <div class="col-md-9">
+          <div class="container" id="cardcontainer">
+          <div class="jumbotron start" id="blackcardbackground">
+            <div class="blackcardcontainer">
+              <h4 class="blackcard">Cards Against Humanity.</h4>
+              <h6 class="starttext"><br>Click to Start</h6>
+            </div>
+          </div>
+          <div class="whitecard whitecardclickable" value="1">
+            <h4 class="whitecardtext" id="whitecard1"></h4>
+            <h6 class="whitecardtext" id="chosenorder1"><br><br><br></h6>
+          </div>
+          <div class="whitecard whitecardclickable" value="2">
+            <h4 class="whitecardtext" id="whitecard2"></h4>
+            <h6 class="whitecardtext" id="chosenorder2"><br><br><br></h6>
+          </div>
+          <div class="whitecard whitecardclickable" value="3">
+            <h4 class="whitecardtext" id="whitecard3"></h4>
+            <h6 class="whitecardtext" id="chosenorder3"><br><br><br></h6>
+          </div>
+        </div>
+        <div class="container" id="cardcontainer">
+          <div class="jumbotron blankcard" style="padding:0px;">
+            <br>
+            <br><br>
+            <button class="submit btn btn-large btn-success" style="border-radius:0px">Submit</button>
+            <br>
+            <button class="reset btn btn-large btn-default"  style="border-radius:0px">Reset Cards </button>
+          </div>
+          <div class="whitecard whitecardclickable" value="4">
+
+            <h4 class="whitecardtext" id="whitecard4"></h4>
+            <h6 class="whitecardtext" id="chosenorder4"><br><br><br></h6>
+          </div>
+          <div class="whitecard whitecardclickable" value="5">
+
+            <h4 class="whitecardtext" id="whitecard5"></h4>
+            <h6 class="whitecardtext" id="chosenorder5"><br><br><br></h6>
+          </div>
+          <div class="whitecard whitecardclickable" value="6">
+
+            <h4 class="whitecardtext" id="whitecard6"></h4>
+            <h6 class="whitecardtext" id="chosenorder6"><br><br><br></h6>
+          </div>
+
+        </div>
+        </div>
+        <div class="col-md-3">
+          <div class="container" id="leaderboardcontainer">
+          <div id="leaderboard">
+              <div class="header"><h3 class="leaderheader" style="font-family:'DIMITRI', cursive;">Leaderboard</h3></div>
+              <div class="leaderboardbackground">
+                <ol class="leaderboard-output">
+                </ol>
+              </div>
+              
+          </div>
+            <div id="console">
+                <h3 class="consoleheader" style="font-family:'DIMITRI', cursive;">Console</h3>
+                <div class="console">
+                  <ol class="chosenorder" style="color:#000; padding:0px;"></ol>
+                  <ol class="votesin" style="color:#000; padding:0px;"></ol>
+                </div>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+
     
     
     <!-- Modal -->
@@ -139,7 +180,7 @@
       
       $('.connect').click(function(){
         if (!($("#username").val() == "" || $("#password").val() == "" || $("#channel").val() == "")){
-          $('.connect').hide();
+          $('.connectgroup').hide();
           $('.connecting').show();
           
           window.chatClient.newGame();
@@ -162,21 +203,28 @@
         window.chatClient.close();
             //toggle disconnect/connect
         $(this).hide();
-        $('.connect').show();
+        $('.connectgroup').show();
         $('#blackcardbackground').removeClass('blackcardenabled'); 
         $('.blackcard').text("Cards Against Humanity.");
         $('.starttext').fadeOut(500);
         $('.whitecard').fadeOut(500);
+        $('.chosenorder').text(" ");
+        $('.votesin').text(" ");
+        $('.reset').hide();
+        $('.submit').hide();
       });
       $('.start').click(function(){
         if ($('.start').hasClass("blackcardenabled")) {
           $('.start').removeClass("blackcardenabled");
           window.chatClient.startRound();
           $('.starttext').fadeOut(500); 
+          $('.whitecard').addClass('whitecardclickable');
         }
       });
       $('.whitecard').click(function() {
-        window.chatClient.setOrder($(this).attr("value"));
+        if ($('.whitecard').hasClass('whitecardclickable')) {
+          window.chatClient.setOrder($(this).attr("value"));
+        }
       });
         
       $('.reset').click(function(){
@@ -187,8 +235,11 @@
         window.chatClient.calculateScore();
         $('.start').addClass("blackcardenabled");
         $('.starttext').text("Click for next round").fadeIn(500);
+        $('.whitecard').removeClass("whitecardclickable");
         $('.submit').hide();
         $('.reset').hide();
+        $('.votesin').text(" ");
+        window.chatClient.buildLeaderboard();
       });
     });
     window.chatClient = new chatClient({
