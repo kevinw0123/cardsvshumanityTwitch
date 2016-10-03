@@ -1,3 +1,6 @@
+www-scf.usc.edu/~wangkj/cardsagainsthumanity/cardschatbot
+
+
 # Twitch Chatbot Hackathon
 We are using the Twitch chatbot template to create a cards against humanity chatbot
 
