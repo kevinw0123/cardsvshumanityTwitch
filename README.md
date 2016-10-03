@@ -1,4 +1,10 @@
-www-scf.usc.edu/~wangkj/cardsagainsthumanity/cardschatbot
+OFFICIAL WEBSITE:
+
+/////////////////////////////////////////////////////////////////////
+http://www-scf.usc.edu/~wangkj/cardsagainsthumanity/cardschatbot.html
+/////////////////////////////////////////////////////////////////////
+
+
 
 
 # Twitch Chatbot Hackathon
